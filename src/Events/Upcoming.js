@@ -23,7 +23,7 @@ class Upcoming extends Component {
 
     render() {
         return (
-            <div className='main'>
+            <div>
 			<Event events={this.state.events} />
 			</div>
         )

@@ -34,8 +34,9 @@ class App extends Component {
               <div>
                 <nav className='nav'>
                   <Link to="/">Home</Link>{" "}
-                  <Link to="/about">About</Link>{" "}
+                  <Link to="/events/upcoming">Events</Link>{" "}
                   <Link to="/artists">Artists</Link>{" "}
+                  <Link to="/about">About</Link>
                 </nav>
                 <Switch>
                 <Route exact path="/" component={Home} />

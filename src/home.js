@@ -7,7 +7,7 @@ class Home extends Component {
 		return(
 			<section className='main'>
 				<h1>Art Bazaar</h1>
-				<div className='card'>
+				<div className='feature'>
 					<img className='profile-img' src='https://i.imgur.com/EXlahSJ.jpg' alt='outdoor pop-up market' />
 					<button><Link to='/events/upcoming'>See Our Upcoming Events</Link></button>
 				</div>

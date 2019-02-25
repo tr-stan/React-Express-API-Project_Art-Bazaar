@@ -5,7 +5,7 @@ import MapContainer from './MapContainer'
 class EventDetails extends Component {
 	state = {
         event: [],
-		zoom: 14,
+		zoom: 12,
         center: {
             lat: 30.2682,
             lng: -97.74295
@@ -37,7 +37,8 @@ render() {
 	return(
 		<section className='main'>
             <h1>{this.state.event.name}</h1>
-            <div className='card'>
+            <div className='feature'>
+                <p>{this.state.event.to_char}</p>
                 <img className='profile-img' src={this.state.event.event_img} alt='pop-up market scene'/>
                 <p>{this.state.event.description}</p>
                 <button><Link to={{pathname:`/events/upcoming`}}>Back to Upcoming Events</Link></button>
