@@ -18,7 +18,7 @@ class Upcoming extends Component {
     }
 
     componentDidMount() {
-        this.getEvents().then((data) => console.log(data, ' Upcoming Event Data from API'))
+        this.getEvents().then((data) => console.log(data, ' Upcoming Events Data from API'))
     }
 
     render() {

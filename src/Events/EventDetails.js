@@ -4,8 +4,8 @@ import MapContainer from './MapContainer'
 
 class EventDetails extends Component {
 	state = {
-		eventt: [],
-		zoom: 0,
+        event: [],
+		zoom: 14,
         center: {
             lat: 30.2682,
             lng: -97.74295
@@ -16,8 +16,11 @@ class EventDetails extends Component {
         try {
             const event = await fetch(`http://localhost:9000/events/${this.props.match.params.id}`)
             const eventJson = await event.json()
-            this.setState({ eventt: eventJson })
+            this.setState({
+                event: eventJson
+            })
             console.log('heeey ', eventJson, 'hooo')
+            console.log('this.state.event: ', this.state.event)
             return eventJson
         } catch (err) {
             console.log(err, 'error in catch block')
@@ -31,17 +34,16 @@ class EventDetails extends Component {
 
 
 render() {
-    console.log("Event Details this.state.event: ", this.state.eventt, "asdfasd")
 	return(
 		<section className='main'>
-            <h1>{this.state.eventt.name}</h1>
+            <h1>{this.state.event.name}</h1>
             <div className='card'>
-                <img className='profile-img' src={this.state.eventt.event_img} alt='pop-up market scene'/>
-                <p>{this.state.eventt.description}</p>
+                <img className='profile-img' src={this.state.event.event_img} alt='pop-up market scene'/>
+                <p>{this.state.event.description}</p>
                 <button><Link to={{pathname:`/events/upcoming`}}>Back to Upcoming Events</Link></button>
             </div>
             <MapContainer
-            eventt={this.state.eventt}
+            event={this.state.event}
             zoom={this.state.zoom}
             center={this.state.center}
             />

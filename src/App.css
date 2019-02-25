@@ -82,6 +82,14 @@ h1 {
     width: auto;
 }
 
+.placemarker {
+    position: absolute;
+    height: 8vh;
+    width: 8vh;
+    top: -8vh;
+    left: -4vh;
+}
+
 .map {
     height: 50vh;
     width: 100%;

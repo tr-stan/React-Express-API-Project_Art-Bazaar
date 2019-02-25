@@ -11,7 +11,7 @@ import './App.css';
 import Home from './home'
 import About from './About/About'
 import Auth from './Admin/Auth'
-import Admin from './Admin/Admin'
+// import Admin from './Admin/Admin'
 import AddArtistAuth from './Admin/AddArtistAuth'
 
 // import relevant Artist-related components
