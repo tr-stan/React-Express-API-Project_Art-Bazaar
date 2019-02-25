@@ -1,23 +1,102 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+body {
+    font-family: 'Rubik', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+a, a:visited {
+    text-decoration: none;
+    color: #479;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+a:hover {
+    font-size: 1.3em;
+    color: #368;
+}
+
+button {
+    padding: 5px 10px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1em;
+    margin: 10px auto;
+    border-radius: 6px;
+}
+
+ul {
+    display: grid;
+    list-style-type: none;
+    list-style: none;
+    padding: 10px;
+    justify-content: space-around;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: repeat(auto-fill, 1fr);
+}
+
+h1 {
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: 3em;
+}
+
+
+.nav {
+    justify-content: center;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+
+.main {
+    justify-content: center;
+    margin: 60px auto 0 auto;
+    text-align: center;
+    background: url(https://i.imgur.com/tOLvZHV.png) cover;
+}
+
+.card {
+    width: 90%;
+    height: auto;
+    min-height: 200px;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: #eff;
 }
 
 .artist {
-	background: #eff;
-	text-align: center;
-	padding: 5px;
-	margin: 10px auto;
+    background: #eff;
+    text-align: center;
+    padding: 5px;
+    margin: 10px auto;
+}
+
+.small-img {
+    max-height: 100px;
+    width: auto;
+}
+
+.profile-img {
+    max-height: 500px;
+    min-height: 300px;
+    width: auto;
+}
+
+.map {
+    height: 50vh;
+    width: 100%;
+}
+
+#login {
+    margin-top: 300px;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

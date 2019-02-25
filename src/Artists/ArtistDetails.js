@@ -27,10 +27,13 @@ class ArtistDetails extends Component {
 
 	render() {
 		return(
-			<section>
-				<h1>{this.state.artist.first_name} {this.state.artist.last_name}</h1>
-				<p>{this.state.artist.bio}</p>
-				<button><Link to={{pathname:`/artists/${this.state.artist.id}/${this.state.artist.first_name}-${this.state.artist.last_name}/art`}}>See their work</Link></button>
+			<section className='main'>
+				<div className='card'>
+					<img className='profile-img' src={this.state.artist.img_url} alt='default profile'/>
+					<h1>{this.state.artist.first_name} {this.state.artist.last_name}</h1>
+					<p>{this.state.artist.bio}</p>
+					<button><Link to={{pathname:`/artists/${this.state.artist.id}/${this.state.artist.first_name}-${this.state.artist.last_name}/art`}}>See their work</Link></button>
+				</div>
 			</section>
 		)
 	}

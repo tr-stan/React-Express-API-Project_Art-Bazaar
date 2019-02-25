@@ -31,11 +31,11 @@ class PieceDetails extends Component {
 			type = 'Print'
 		}
 		return(
-			<section>
+			<section className='main'>
 				<h1>{this.state.art.name}</h1>
 				<p>{this.state.art.price} -- {type}</p>
 				<p>{this.state.art.description}</p>
-				<button><Link to={{pathname:`/artists/${this.state.art.id}/${this.state.art.first_name}-${this.state.art.last_name}/art`}}>Back to artist</Link></button>
+				<button><Link to={{pathname:`/artists/${this.state.art.public_id}/${this.state.art.first_name}-${this.state.art.last_name}/art`}}>Back to artist</Link></button>
 			</section>
 		)
 	}
