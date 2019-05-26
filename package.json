@@ -2,6 +2,7 @@
   "name": "art-bazaar-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://art-bazaar-react.herokuapp.com",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "google-map-react": "^1.1.2",
