@@ -9,8 +9,9 @@ class ArtistDetails extends Component {
 	}
 
 	getArtist = async () => {
+		let fetchURL = (process.env.NODE_ENV !== 'production') ? `http://localhost:9000/users/${this.props.match.params.artistId}` : `https://art-bazaar-react.herokuapp.com/users/${this.props.match.params.artistId}`
 		try {
-			const artist = await fetch(`http://localhost:9000/users/${this.props.match.params.artistId}`)
+			const artist = await fetch(fetchURL)
 			const artistJson = await artist.json()
 			this.setState({artist: artistJson})
 			return artistJson

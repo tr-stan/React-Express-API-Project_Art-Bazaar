@@ -6,8 +6,9 @@ class Upcoming extends Component {
     }
 
     getEvents = async () => {
+        let fetchURL = (process.env.NODE_ENV !== 'production') ? `http://localhost:9000/events` : `https://art-bazaar-react.herokuapp.com/events`
         try {
-            const events = await fetch('http://localhost:9000/events')
+            const events = await fetch(fetchURL)
             const eventsJson = await events.json()
             this.setState({ events: eventsJson })
             return eventsJson

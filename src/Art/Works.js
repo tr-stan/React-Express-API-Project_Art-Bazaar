@@ -8,8 +8,9 @@ class Works extends Component {
 	}
 
 	getWorks = async () => {
+		let fetchURL = (process.env.NODE_ENV !== 'production') ? `http://localhost:9000/products/${this.props.match.params.artistId}` : `https://art-bazaar-react.herokuapp.com/products/${this.props.match.params.artistId}`
 		try {
-			const works = await fetch(`http://localhost:9000/products/${this.props.match.params.artistId}`)
+			const works = await fetch(fetchURL)
 			const worksJson = await works.json()
 			this.setState({works: worksJson})
 			return worksJson

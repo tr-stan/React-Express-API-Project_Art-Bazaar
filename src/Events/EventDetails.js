@@ -3,18 +3,19 @@ import { Link } from 'react-router-dom'
 import MapContainer from './MapContainer'
 
 class EventDetails extends Component {
-	state = {
+    state = {
         event: [],
-		zoom: 12,
+        zoom: 12,
         center: {
             lat: 30.2682,
             lng: -97.74295
-		}
-	}
+        }
+    }
 
-	getEvent = async () => {
+    getEvent = async () => {
+        let fetchURL = (process.env.NODE_ENV !== 'production') ? `http://localhost:9000/events/${this.props.match.params.id}` : `https://art-bazaar-react.herokuapp.com/events/${this.props.match.params.id}`
         try {
-            const event = await fetch(`http://localhost:9000/events/${this.props.match.params.id}`)
+            const event = await fetch(fetchURL)
             const eventJson = await event.json()
             this.setState({
                 event: eventJson
@@ -34,8 +35,8 @@ class EventDetails extends Component {
 
 
 render() {
-	return(
-		<section className='main'>
+    return(
+        <section className='main'>
             <h1>{this.state.event.name}</h1>
             <div className='feature'>
                 <p>{this.state.event.to_char}</p>
@@ -48,8 +49,8 @@ render() {
             zoom={this.state.zoom}
             center={this.state.center}
             />
-		</section>
-	)
+        </section>
+    )
 }
 }
 

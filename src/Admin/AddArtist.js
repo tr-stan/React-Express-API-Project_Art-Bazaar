@@ -12,9 +12,10 @@ class AddArtist extends Component {
     }
 
     handleSubmit = (event) => {
+        let fetchUrl = (process.env.NODE_ENV !== 'production') ? `http://localhost:9000/users` : `https://art-bazaar-react.herokuapp.com/users`
         // stop page from refreshing
         event.preventDefault()
-        fetch('http://localhost:9000/users', {
+        fetch(fetchUrl, {
             method: "POST",
             headers: {
                 "Accept": "application/json",

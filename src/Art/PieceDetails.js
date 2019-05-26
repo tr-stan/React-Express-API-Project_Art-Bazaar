@@ -8,8 +8,9 @@ class PieceDetails extends Component {
 	}
 
 	getArt = async () => {
+		let fetchURL = (process.env.NODE_ENV !== 'production') ? `http://localhost:9000/products/${this.props.match.params.artistId}/${this.props.match.params.id}` : `https://art-bazaar-react.herokuapp.com/products/${this.props.match.params.artistId}/${this.props.match.params.id}`
 		try {
-			const art = await fetch(`http://localhost:9000/products/${this.props.match.params.artistId}/${this.props.match.params.id}`)
+			const art = await fetch(fetchURL)
 			const artJson = await art.json()
 			this.setState({art: artJson})
 			console.log(artJson)
